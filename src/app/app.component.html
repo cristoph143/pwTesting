@@ -1,69 +1,47 @@
 <div class="container">
-  <h1>{{ title }}</h1>
+    <h1>{{ title }}</h1>
 
-  <div class="row mt-4">
-    <div class="col">
-      <div class="col">
-        <label for="">Enter Length</label>
-      </div>
-      <div class="col" id="lenghtOfPassword">
-        <input (input)="getLength(passwordLength.value)" #passwordLength />
-      </div>
-    </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col">
-      <div class="col">
-        <input
-          (change)="onChangeUseLetters()"
-          class="mr-3"
-          type="checkbox"
-          name=""
-          id="withLetters"
-        />
-        <label for="">Use Letters</label>
-      </div>
-      <div>
+    <div class="row mt-4">
         <div class="col">
-          <input
-            (change)="onChangeUseNumbers()"
-            class="mr-3"
-            type="checkbox"
-            name=""
-            id=""
-          />
-          <label for="">Use Numbers</label>
+            <div class="col">
+                <label for="">Enter Length</label>
+            </div>
+            <div class="col" id="lenghtOfPassword">
+                <input (input)="getLength(passwordLength.value)" #passwordLength />
+            </div>
         </div>
-      </div>
-      <div class="col">
-        <input
-          (change)="onChangeUseSymbols()"
-          class="mr-3"
-          type="checkbox"
-          name=""
-          id=""
-        />
-        <label>Use Symbols</label>
-      </div>
-      <div class="col mt-4">
-        <button
-          class="btn btn-primary"
-          [disabled]="
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <div class="col">
+                <input (change)="onChangeUseLetters()" class="mr-3" type="checkbox" name="" id="withLetters" />
+                <label for="">Use Letters</label>
+            </div>
+            <div>
+                <div class="col">
+                    <input (change)="onChangeUseNumbers()" class="mr-3" type="checkbox" name="" id="withNumbers" />
+                    <label for="">Use Numbers</label>
+                </div>
+            </div>
+            <div class="col">
+                <input (change)="onChangeUseSymbols()" class="mr-3" type="checkbox" name="" id="withSymbols" />
+                <label>Use Symbols</label>
+            </div>
+            <div class="col mt-4">
+                <button class="btn btn-primary" [disabled]="
             !(passwordLength.value && (useLetters || useNumbers || useSymbols))
-          "
-          (click)="onButtonClick()"
-        >
+          " (click)="onButtonClick()">
           Generate Password
         </button>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div *ngIf="password">
-    <hr />
-    <div class="col">
-      <label for="">Your password</label>
+    <div *ngIf="password">
+        <hr />
+        <div class="col">
+            <label for="">Your password</label>
+        </div>
+        <div class="col"><input [value]="password" /></div>
     </div>
-    <div class="col"><input [value]="password" /></div>
-  </div>
 </div>

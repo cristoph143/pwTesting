@@ -31,4 +31,30 @@ describe('AppComponent', () => {
 
     expect(component.useLetters).toBeTrue();
   });
+
+  it('should click `Use Symbols` and useSymbols should be true', () => {
+    expect(component.useSymbols).toBeFalse();
+
+    let input = fixture.debugElement.query(
+      By.css('#withSymbols')
+    ).nativeElement;
+
+    input.click();
+    fixture.detectChanges();
+
+    expect(component.useSymbols).toBeTrue();
+  });
+
+  it('should click `Use Numbers` and useNumbers should be true', () => {
+    expect(component.useNumbers).toBeFalse();
+
+    let input = fixture.debugElement.query(
+      By.css('#withNumbers')
+    ).nativeElement;
+
+    input.click();
+    fixture.detectChanges();
+
+    expect(component.useNumbers).toBeTrue();
+  });
 });
