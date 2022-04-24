@@ -99,14 +99,4 @@ describe('AppComponent - Bohol, Cristopher B.', () => {
       expect(component.password).not.toBeNull;
     }); 
   });
-
-  // describe('display the result', () => {
-  //   it('should display the result', () => {
-  //     const compiled = fixture.debugElement.nativeElement;
-  //     expect(compiled.querySelector('h1').textContent).toContain(
-  //       ''
-  //     );
-  //   });
-  // });
-
 });
