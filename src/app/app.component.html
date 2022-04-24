@@ -7,7 +7,7 @@
                 <label for="">Enter Length</label>
             </div>
             <div class="col" id="lenghtOfPassword">
-                <input (input)="getLength(passwordLength.value)" #passwordLength />
+                <input (input)="getLength(passwordLength.value)" id="pwLenght" #passwordLength />
             </div>
         </div>
     </div>
@@ -29,10 +29,10 @@
             </div>
             <div class="col mt-4">
                 <button class="btn btn-primary" [disabled]="
-            !(passwordLength.value && (useLetters || useNumbers || useSymbols))
-          " (click)="onButtonClick()">
-          Generate Password
-        </button>
+                    !(passwordLength.value && (useLetters || useNumbers || useSymbols))
+                    " (click)="onButtonClick()">
+                    Generate Password
+                </button>
             </div>
         </div>
     </div>
